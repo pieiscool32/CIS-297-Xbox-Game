@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="Breakout.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Grid" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/wallpaper1.jpg"/>
+        </Grid.Background>
+        <Ellipse x:Name="Ball" HorizontalAlignment="Left" Height="10" Margin="455,0,0,238" Stroke="Black" VerticalAlignment="Bottom" Width="10" >
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEEEF7" Offset="0"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="476,282,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+        <TextBlock x:Name="PauseText" HorizontalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="24" FontFamily="Stencil" Foreground="White" />
+        <Rectangle x:Name="LeftWall" Fill="White" Stroke="White" Margin="30,0,0,0" Height="500" Width="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle x:Name="RightWall" Fill="#FFF4F4F5" Stroke="White" Margin="0,0,30,0" Height="500" Width="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Rectangle x:Name="topWall" Fill="#FFF4F4F5" Stroke="White" Margin="0,30,0,0" Height="1" Width="920" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Rectangle x:Name="BottomPaddle" Stroke="Black" Margin="455,0,0,25" Height="10" Width="70" HorizontalAlignment="Left" VerticalAlignment="Bottom" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF013BFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <RadioButton x:Name="paddle_slow" Content="Slow" HorizontalAlignment="Center" Margin="-250,-100,0,0" VerticalAlignment="Center" GroupName="paddleSpeed" FontSize="18" Width="89" Click="paddle_slow_Click" Background="#004B8B7E" Foreground="White" FocusVisualSecondaryBrush="#99FFFFFF" FocusVisualPrimaryBrush="White" BorderBrush="Transparent"/>
+        <RadioButton x:Name="paddle_medium" Content="Medium" HorizontalAlignment="Center" Margin="0,-100,0,0" VerticalAlignment="Center" GroupName="paddleSpeed" FontSize="18" Click="paddle_medium_Click" Background="#004B8B7E" IsChecked="True" Foreground="White"/>
+        <RadioButton x:Name="paddle_fast" Content="Fast" HorizontalAlignment="Center" Margin="250,-100,0,0" VerticalAlignment="Center" GroupName="paddleSpeed" FontSize="18" Click="paddle_fast_Click" Background="#004B8B7E" Foreground="White"/>
+        <Button x:Name="ReturnMenu" Content="Return to Menu" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" RenderTransformOrigin="0.231,-0.016" Click="ReturnMenu_Click" Height="30" Width="133" Background="#FF4B5F8B" Foreground="White"/>
+        <Button x:Name="ReturnGame" Content="Resume Game" HorizontalAlignment="Left" Margin="200,40,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" RenderTransformOrigin="0.231,-0.016" Click="ReturnGame_Click" Height="30" Width="133" Background="#FF4B5F8B" Foreground="White"/>
+        <RadioButton x:Name="ball_slow" Content="Slow" HorizontalAlignment="Center" Margin="-250,50,0,0" VerticalAlignment="Center" GroupName="ballSpeed" FontSize="18" Width="92" Click="ball_slow_Click" Background="#004B8B7E" Foreground="White"/>
+        <RadioButton x:Name="ball_medium" Content="Medium" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Center" GroupName="ballSpeed" FontSize="18" Width="92" Click="ball_medium_Click" Background="#00EAFDF9" IsChecked="True" Foreground="White"/>
+        <RadioButton x:Name="ball_fast" Content="Fast" HorizontalAlignment="Center" Margin="250,50,0,0" VerticalAlignment="Center" GroupName="ballSpeed" FontSize="18" Width="92" Click="ball_fast_Click" Background="#004B8B7E" Foreground="White"/>
+        <TextBlock x:Name="PaddleSpeedOptions" HorizontalAlignment="Center" Margin="0,-160,0,0" TextWrapping="Wrap" Text="Paddle Speed:" VerticalAlignment="Center" Height="25" Width="120" Foreground="#FF0080FF" FontSize="18"/>
+        <TextBlock x:Name="BallSpeed" HorizontalAlignment="Center" Margin="0,-10,0,0" TextWrapping="Wrap" Text="Ball Speed:" VerticalAlignment="Center" FocusVisualPrimaryBrush="Transparent" Width="90" Foreground="#FF0080FF" FontSize="18"/>
+        <RadioButton x:Name="ball_one" Content="One" HorizontalAlignment="Center" Margin="-250,200,0,0" VerticalAlignment="Center" GroupName="ballCount" FontSize="18" Width="92" Click="ball_one_Click" Background="#004B8B7E" Foreground="White"/>
+        <RadioButton x:Name="ball_few" Content="Few" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Center" GroupName="ballCount" FontSize="18" Width="92" Click="ball_few_Click" Background="#00BCCDC9" IsChecked="True" Foreground="White"/>
+        <RadioButton x:Name="ball_many" Content="Many" HorizontalAlignment="Center" Margin="250,200,0,0" VerticalAlignment="Center" GroupName="ballCount" FontSize="18" Width="92" Click="ball_many_Click" Background="#004B8B7E" Foreground="White"/>
+        <TextBlock x:Name="BallCountOptions" HorizontalAlignment="Center" Margin="0,140,0,0" TextWrapping="Wrap" Text="Ball Count:" VerticalAlignment="Center" Height="25" Width="90" Foreground="#FF0080FF" FontSize="18"/>
+        <MediaElement x:Name="main_song" Source="ms-appx:///Assets/Zeds Dead x NGHTMRE - Frontlines (ft. GG Magree) [Premiere]_oAmQIDIK8RA_youtube.mp3" IsLooping="True" AutoPlay="False"></MediaElement>
+    </Grid>
+</Page>
